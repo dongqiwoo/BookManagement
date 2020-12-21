@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BookWindow</class>
+ <widget class="QMainWindow" name="BookWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>668</width>
+    <height>379</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>图书管理</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>图书管理</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QComboBox" name="search_type">
+        <item>
+         <property name="text">
+          <string>书名</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>作者</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>出版社</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>所属类别</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="search_content">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_search">
+        <property name="minimumSize">
+         <size>
+          <width>16</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>查询</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_add">
+        <property name="minimumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>图书登记</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_in_2">
+        <property name="minimumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>查询库存</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_in">
+        <property name="minimumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>入库</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_out">
+        <property name="minimumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>出库</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_borrow">
+        <property name="minimumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>借阅</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_giveback">
+        <property name="minimumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>56</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>归还</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTableView" name="tableView"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_search</sender>
+   <signal>clicked()</signal>
+   <receiver>BookWindow</receiver>
+   <slot>search()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>264</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>337</x>
+     <y>8</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_add</sender>
+   <signal>clicked()</signal>
+   <receiver>BookWindow</receiver>
+   <slot>add()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>410</x>
+     <y>5</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_in</sender>
+   <signal>clicked()</signal>
+   <receiver>BookWindow</receiver>
+   <slot>check_in()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>418</x>
+     <y>40</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>459</x>
+     <y>12</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_out</sender>
+   <signal>clicked()</signal>
+   <receiver>BookWindow</receiver>
+   <slot>check_out()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>496</x>
+     <y>39</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>521</x>
+     <y>18</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_borrow</sender>
+   <signal>clicked()</signal>
+   <receiver>BookWindow</receiver>
+   <slot>borrow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>549</x>
+     <y>34</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>18</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_giveback</sender>
+   <signal>clicked()</signal>
+   <receiver>BookWindow</receiver>
+   <slot>giveback()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>612</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>656</x>
+     <y>34</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_in_2</sender>
+   <signal>clicked()</signal>
+   <receiver>BookWindow</receiver>
+   <slot>check_stock()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>377</x>
+     <y>40</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>440</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>search_content</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btn_search</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>203</x>
+     <y>36</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>233</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>search()</slot>
+  <slot>add()</slot>
+  <slot>check_in()</slot>
+  <slot>check_out()</slot>
+  <slot>borrow()</slot>
+  <slot>giveback()</slot>
+  <slot>check_stock()</slot>
+ </slots>
+</ui>
